@@ -37,6 +37,8 @@ UserStory story5 = UserStory("assets/story_one.png", "assets/profile.png", "Evan
 
 
 class HomeWidget extends StatefulWidget {
+  const HomeWidget({super.key});
+
   @override
   State<StatefulWidget> createState() => _HomeWidgetState();
 
@@ -96,7 +98,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         ),
 
 
-        /*Expanded(child: ListView.builder(
+        Expanded(child: ListView.builder(
             itemCount: list.length,
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -110,7 +112,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 return Text("N/A");
               }
             },
-          ))*/
+          ))
       ],),
     );
   }
