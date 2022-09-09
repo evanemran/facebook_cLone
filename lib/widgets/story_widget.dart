@@ -21,7 +21,6 @@ class _StoryWidgetState extends State<StoryWidget> {
     return Scaffold(
       body: Container(
         width: 100,
-        height: 160,
         color: Colors.white,
         child: Stack(
           children: [
