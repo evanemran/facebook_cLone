@@ -18,34 +18,19 @@ class StoryWidget extends StatefulWidget {
 class _StoryWidgetState extends State<StoryWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
         width: 100,
-        color: Colors.white,
-        child: Stack(
+        height: 180,
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage(widget.story.sImage), fit: BoxFit.cover),
+          borderRadius: BorderRadius.all(Radius.circular(15))
+        ),
+        child: Column(
           children: [
-            SizedBox(height: 160, child: Image.asset(widget.story.sImage, fit: BoxFit.fill,)),
-            Positioned(bottom: 0,  child: Row(children: [Expanded(child: Text(widget.story.sUserName, style: TextStyle(color: Colors.white), textAlign: TextAlign.start,))],)),
-            Positioned(top: 0,  child: Row(children: [Expanded(child: CircleAvatar(backgroundColor: ThemeColors.blueAccent, radius: 20, child: Image.asset("assets/profile.png", height: 38, width: 38, fit: BoxFit.fill,)))],))
+            Expanded(child: Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [Padding(padding: EdgeInsets.fromLTRB(8, 8, 0, 0), child: CircleAvatar(backgroundColor: ThemeColors.blueAccent, radius: 18, child: Image.asset("assets/profile.png", height: 30, width: 30, fit: BoxFit.fill,)),)],)),
+            Row(children: [Expanded(child: Padding(padding: EdgeInsets.fromLTRB(8, 0, 0, 8), child: Text(widget.story.sUserName, style: const TextStyle(color: Colors.white), textAlign: TextAlign.start,),))],),
           ],
         )
-
-
-        /*child: Column(
-          children: [
-            SizedBox(height: 160, child: Image.asset(widget.story.sImage, fit: BoxFit.fill,)),
-            const SizedBox(height: 5.0),
-            Row(children: [Expanded(child: Padding(padding: EdgeInsets.fromLTRB(8,4,2,2), child: Text(title,
-                style: AppTheme.offerText,
-                textAlign: TextAlign.start,
-                overflow: TextOverflow.ellipsis),))],),
-            Row(children: [Expanded(child: Padding(padding: EdgeInsets.fromLTRB(8,2,2,4), child: Text(vendor,
-                style: AppTheme.offerVendorText,
-                textAlign: TextAlign.start,
-                overflow: TextOverflow.ellipsis),))],),
-          ],
-        ),*/
-      ),
     );
   }
 
