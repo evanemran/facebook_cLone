@@ -1,8 +1,12 @@
+import 'package:facebook_clone/models/shared_model.dart';
 import 'package:facebook_clone/models/story_model.dart';
 import 'package:facebook_clone/styles/ThemeColors.dart';
+import 'package:facebook_clone/widgets/shared_widget.dart';
 import 'package:facebook_clone/widgets/status_widget.dart';
 import 'package:facebook_clone/widgets/story_container_widget.dart';
 import 'package:facebook_clone/widgets/story_widget.dart';
+import 'package:facebook_clone/widgets/suggestion_container_widget.dart';
+import 'package:facebook_clone/widgets/suggestion_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../models/status_model.dart';
@@ -18,16 +22,20 @@ List<UserSuggestion> suggestList = [
 ];
 
 List<Object> list = [
-  UserStatus("Evan Emran", "12:45 AM", "assets/profile.png", "Hey there, I am using Fakebook. Lmao!", "", 69, 6, 9),
-  UserStatus("Tony Stark", "07:12 AM", "assets/profile.png", "I know it's not a perfect world. But It's the only one we got.", "assets/image.png", 3000, 6, 9),
-  UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", 1, 1, 1),
-  UserStatus("Bruce Banner", "12:45 AM", "assets/profile.png", "That's my secret cap! I am always angry...", "", 21, 6, 1),
+  UserStatus("Evan Emran", "12:45 AM", "assets/profile.png", "Hey there, I am using Fakebook. Lmao!", "", "Natasha and 69 others", 6, 9),
+  UserStatus("Tony Stark", "07:12 AM", "assets/profile.png", "I know it's not a perfect world. But It's the only one we got.", "assets/image.png", "3000", 6, 9),
+
+  SharedStatus("assets/profile.png", "Bruce Banner", "15 min ago", UserStatus("Tony Stark", "07:12 AM", "assets/profile.png", "I know it's not a perfect world. But It's the only one we got.", "assets/image.png", "3000", 6, 9)),
+  SharedStatus("assets/profile.png", "Bruce Banner", "15 min ago", UserStatus("Thanos", "11:59 PM", "assets/profile.png", "Everything needs to be balanced! I am inevitable.", "", "111", 6, 9)),
+
+  UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", "12", 1, 1),
+  UserStatus("Bruce Banner", "12:45 AM", "assets/profile.png", "That's my secret cap! I am always angry...", "", "Tony and 21 others", 6, 1),
 
   suggestList,
 
-  UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", 1, 1, 1),
-  UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", 1, 1, 1),
-  UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", 1, 1, 1),
+  UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", "14", 1, 1),
+  UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", "35", 1, 1),
+  UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", "Heimdall and 2 others", 1, 1),
 ];
 
 
@@ -39,8 +47,21 @@ class HomeWidget extends StatefulWidget {
 
 }
 class _HomeWidgetState extends State<HomeWidget> {
-  @override
-  Widget build(BuildContext context) {
+
+  FutureBuilder<Widget> loadWidget() {
+    return FutureBuilder<Widget>(
+        future: getWidget(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done){
+            return snapshot.data as Widget;
+          }
+          else {
+            return Center(child: CircularProgressIndicator(color: ThemeColors.blueAccent,),);
+          }
+        });
+  }
+
+  Future<Widget> getWidget() async {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       physics: BouncingScrollPhysics(),
@@ -75,6 +96,12 @@ class _HomeWidgetState extends State<HomeWidget> {
             if(item.runtimeType == UserStatus) {
               return StatusWidget(status: item as UserStatus,);
             }
+            else if(item.runtimeType == List<UserSuggestion>) {
+              return SuggestionContainer();
+            }
+            else if(item.runtimeType == SharedStatus) {
+              return SharedWidget(status: item as SharedStatus);
+            }
             else {
               return Text("N/A");
             }
@@ -82,6 +109,11 @@ class _HomeWidgetState extends State<HomeWidget> {
         )
       ],),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return loadWidget();
   }
 
 }

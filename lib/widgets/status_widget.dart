@@ -21,28 +21,48 @@ class _StatusWidgetState extends State<StatusWidget> {
     }else {
       visibility = true;
     }
-    return Card(margin: EdgeInsets.all(0.0), elevation: 4.0, color: Colors.white, child: Container(
-      margin: EdgeInsets.all(8.0),child: Column(
+    return Card(margin: EdgeInsets.fromLTRB(4,4,4,0), shadowColor: Colors.white, elevation: 4.0, color: Colors.white, child: Container(
+      margin: EdgeInsets.fromLTRB(4,4,4,0),child: Column(
       children: [
-        Row(children: [
+        Padding(padding: EdgeInsets.all(4.0), child: Row(children: [
           Image.asset(widget.status.userImage, height: 34, width: 34, fit: BoxFit.fill),
           SizedBox(width: 8,),
           Expanded(child: Column(children: [
             Row(children: [Expanded(child: Text(widget.status.userName, style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold), textAlign: TextAlign.start,))],),
-            Row(children: [Expanded(child: Text(widget.status.postTime, style: TextStyle(color: Colors.black45, fontSize: 12.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,))],),
-          ],))
-        ],),
+            Row(children: [Text(widget.status.postTime, style: TextStyle(color: Colors.black45, fontSize: 12.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,), 
+            SizedBox(width: 8,), Image.asset("assets/friends.png", height: 12, width: 12, color: Colors.grey,)],),
+          ],)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz, color: Colors.black45,),)
+        ],),),
         SizedBox(height: 8,),
-        Visibility(visible: visibility ,child: Image.asset(widget.status.userStatusImage, height: 180, width: double.infinity, fit: BoxFit.fill,)),
-        SizedBox(height: 8,),
-        Row(children: [Expanded(child: Text(widget.status.userStatus,style: TextStyle(color: Colors.black87, fontWeight: FontWeight.normal, fontSize: 16.0),))],),
-        SizedBox(height: 20,),
+        Padding(padding: EdgeInsets.all(8), child: Row(children: [Expanded(child: Text(widget.status.userStatus,style: TextStyle(color: Colors.black87, fontWeight: FontWeight.normal, fontSize: 16.0),))],),),
+        Visibility(visible: visibility ,child: Image.asset(widget.status.userStatusImage, height: 200, width: double.infinity, fit: BoxFit.fill,)),
+        SizedBox(height: 10,),
+        Padding(padding: EdgeInsets.all(8), child: Row(crossAxisAlignment: CrossAxisAlignment.center,children: [
+          Image.asset("assets/liked.png", height: 18, width: 18, fit: BoxFit.fill,),
+          Transform.translate(
+              offset: Offset(-5, 0),
+              child: Image.asset("assets/love.png", height: 18, width: 18, fit: BoxFit.fill)
+          ),
+          Transform.translate(
+              offset: Offset(-10, 0),
+              child: Image.asset("assets/haha.png", height: 18, width: 18, fit: BoxFit.fill)
+          ),
+
+          Transform.translate(
+              offset: Offset(-5, 0),
+              child: Text(widget.status.likeCount, style: TextStyle(color: Colors.black54, fontSize: 13),)
+          ),
+          
+          Expanded(child: Text(widget.status.commentCount.toString() + " comments", style: TextStyle(color: Colors.black54, fontSize: 13), textAlign: TextAlign.end,))
+        ],),),
+        SizedBox(height: 10,),
+        Container(width: double.infinity, color: Colors.black26, height: 1,),
         Row(children: [
           Expanded(child: IconButtonWidget(button: Button("assets/like.png", "Like"))),
           Expanded(child: IconButtonWidget(button: Button("assets/comment.png", "Comment"))),
           Expanded(child: IconButtonWidget(button: Button("assets/share.png", "Share"))),
         ],),
-        SizedBox(height: 20,),
       ],
     ),
     ),);

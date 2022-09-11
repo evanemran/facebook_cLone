@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 5,
+      length: 6,
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
@@ -56,29 +56,58 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ],
 
-          bottom: const TabBar(
+          bottom: TabBar(
             indicatorColor: ThemeColors.blueAccent,
             labelColor: ThemeColors.blueAccent,
             unselectedLabelColor: Colors.black87,
             tabs: [
-              Tab(icon: ImageIcon(AssetImage("assets/home.png"), color: ThemeColors.blueAccent,),),
-              Tab(icon: ImageIcon(AssetImage("assets/watch.png"), color: Colors.black87,),),
-              Tab(icon: ImageIcon(AssetImage("assets/user.png"), color: Colors.black87,),),
-              Tab(icon: ImageIcon(AssetImage("assets/market.png"), color: Colors.black87,),),
-              Tab(icon: ImageIcon(AssetImage("assets/notification.png"), color: Colors.black87,),),
+              Tab(child: ImageIcon(AssetImage("assets/home.png"), color: ThemeColors.blueAccent,),),
+              Tab(child: Stack(children: [
+                ImageIcon(AssetImage("assets/requests.png"), color: Colors.black87,),
+                Transform.translate(
+                    offset: Offset(12,0),
+                    child: Positioned(right: 0, top: 0, child: makeNotification("4"))
+                ),
+              ],),),
+              Tab(child: ImageIcon(AssetImage("assets/user.png"), color: Colors.black87,),),
+              Tab(child: ImageIcon(AssetImage("assets/market.png"), color: Colors.black87,),),
+              Tab(child: Stack(children: [
+                ImageIcon(AssetImage("assets/notification.png"), color: Colors.black87,),
+                Transform.translate(
+                    offset: Offset(12,0),
+                    child: Positioned(right: 0, top: 0, child: makeNotification("3"))
+                ),
+              ],),),
+              Tab(child: ImageIcon(AssetImage("assets/menu.png"), color: Colors.black87,),),
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             HomeWidget(),
-            const Center(child: Text("N/A"),),
-            const Center(child: Text("N/A"),),
-            const Center(child: Text("N/A"),),
-            const Center(child: Text("N/A"),),
+            Center(child: Text("N/A"),),
+            Center(child: Text("N/A"),),
+            Center(child: Text("N/A"),),
+            Center(child: Text("N/A"),),
+            Center(child: Text("N/A"),),
           ],
         ),
       ),// This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  Widget makeNotification(String count) {
+    return Container(
+      width: 16,
+      height: 16,
+      decoration: BoxDecoration(
+          color: Colors.red,
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.white)
+      ),
+      child: Center(
+        child: Text(count.toString(),style: TextStyle(color: Colors.white, fontSize: 12),),
+      ),
     );
   }
 }

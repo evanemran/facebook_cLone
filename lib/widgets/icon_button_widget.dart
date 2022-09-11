@@ -8,20 +8,22 @@ class IconButtonWidget extends StatefulWidget {
   final Button button;
 
   @override
-  State<IconButtonWidget> createState() => _IconButtnWidgetState();
+  State<IconButtonWidget> createState() => _IconButtonWidgetState();
 }
 
-class _IconButtnWidgetState extends State<IconButtonWidget> {
+class _IconButtonWidgetState extends State<IconButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return TextButton(onPressed: () {
+
+    }, child: Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(widget.button.icon, height: 22, width: 22,),
+        Image.asset(widget.button.icon, height: 22, width: 22, color: Colors.black54,),
         const SizedBox(width: 8,),
-        Text(widget.button.title, style: const TextStyle(color: Colors.black87, fontSize: 14, fontStyle: FontStyle.normal),)
+        Text(widget.button.title, style: const TextStyle(color: Colors.black54, fontSize: 14, fontStyle: FontStyle.normal),)
       ],
-    );
+    ));
   }
 }

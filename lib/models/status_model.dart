@@ -4,7 +4,7 @@ class UserStatus {
   String userImage = "";
   String userStatus = "";
   String userStatusImage = "";
-  int likeCount = 0;
+  String likeCount = "";
   int commentCount = 0;
   int shareCount = 0;
 
