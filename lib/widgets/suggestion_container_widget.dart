@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 
 import '../models/story_model.dart';
 
-UserSuggestion one = UserSuggestion("Bruce Wayne", "assets/av_three.png", "12 mutual friends");
-UserSuggestion two = UserSuggestion("Diana Prince", "assets/av_three.png", "69 mutual friends");
-UserSuggestion three = UserSuggestion("Logan", "assets/av_three.png", "8 mutual friends");
+UserSuggestion one = UserSuggestion("Bruce Wayne", "assets/wayne.jpg", "12 mutual friends");
+UserSuggestion two = UserSuggestion("Diana Prince", "assets/diana.jpg", "69 mutual friends");
+UserSuggestion three = UserSuggestion("Logan", "assets/logan.png", "8 mutual friends");
 
 class SuggestionContainer extends StatefulWidget {
   const SuggestionContainer({Key? key}) : super(key: key);

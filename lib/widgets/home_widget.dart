@@ -13,7 +13,7 @@ import '../models/status_model.dart';
 import '../models/suggestion_model.dart';
 
 List<UserSuggestion> suggestList = [
-  UserSuggestion("Bruce Wayne", "assets/av_three.png", "12"),
+  UserSuggestion("Bruce Wayne", "assets/wayne.png", "12"),
   UserSuggestion("Bruce Wayne", "assets/av_three.png", "12"),
   UserSuggestion("Bruce Wayne", "assets/av_three.png", "12"),
   UserSuggestion("Bruce Wayne", "assets/av_three.png", "12"),
@@ -23,13 +23,14 @@ List<UserSuggestion> suggestList = [
 
 List<Object> list = [
   UserStatus("Evan Emran", "12:45 AM", "assets/profile.png", "Hey there, I am using Fakebook. Lmao!", "", "Natasha and 69 others", 6, 9),
-  UserStatus("Tony Stark", "07:12 AM", "assets/profile.png", "I know it's not a perfect world. But It's the only one we got.", "assets/image.png", "3000", 6, 9),
+  UserStatus("Tony Stark", "07:12 AM", "assets/stark.jpg", "I know it's not a perfect world. But It's the only one we got.", "assets/image.png", "3000", 6, 9),
+  UserStatus("Natasha Romanoff", "07:12 AM", "assets/nat.jpg", "Even If There's A Small Chance We Can Undo This, I Mean, We Owe It To Everyone Not In This Room To Try.", "assets/natasha.jpg", "Bruce and 69 others", 6, 9),
 
-  SharedStatus("assets/profile.png", "Bruce Banner", "15 min ago", UserStatus("Tony Stark", "07:12 AM", "assets/profile.png", "I know it's not a perfect world. But It's the only one we got.", "assets/image.png", "3000", 6, 9)),
-  SharedStatus("assets/profile.png", "Bruce Banner", "15 min ago", UserStatus("Thanos", "11:59 PM", "assets/profile.png", "Everything needs to be balanced! I am inevitable.", "", "111", 6, 9)),
+  SharedStatus("assets/banner.jpeg", "Bruce Banner", "15 min ago", UserStatus("Tony Stark", "07:12 AM", "assets/profile.png", "I know it's not a perfect world. But It's the only one we got.", "assets/image.png", "Tony and 11 others", 12, 9)),
+  SharedStatus("assets/banner.jpeg", "Bruce Banner", "15 min ago", UserStatus("Thanos", "11:59 PM", "assets/profile.png", "Everything needs to be balanced! I am inevitable.", "", "111", 6, 9)),
 
   UserStatus("Loki", "12:45 AM", "assets/profile.png", "Kneeel", "", "12", 1, 1),
-  UserStatus("Bruce Banner", "12:45 AM", "assets/profile.png", "That's my secret cap! I am always angry...", "", "Tony and 21 others", 6, 1),
+  UserStatus("Bruce Banner", "12:45 AM", "assets/banner.jpeg", "That's my secret cap! I am always angry...", "", "Tony and 21 others", 6, 1),
 
   suggestList,
 

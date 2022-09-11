@@ -28,7 +28,7 @@ class _SuggestionWidgetState extends State<SuggestionWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(widget.story.sImage, width: 200, height: 200, fit: BoxFit.cover,),
+          Image.asset(widget.story.sImage, width: double.infinity, height: 200, fit: BoxFit.cover,),
           Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [Padding(padding: EdgeInsets.fromLTRB(8, 8, 8, 8), child: Text(widget.story.sName, style: TextStyle(color: Colors.black87, fontSize: 14, fontWeight: FontWeight.bold),),)],),
           Row(children: [Expanded(child: Padding(padding: EdgeInsets.fromLTRB(8, 0, 0, 8), child: Text(widget.story.sMutual, style: const TextStyle(color: Colors.black87, fontSize: 12), textAlign: TextAlign.start,),))],),
           Padding(padding: EdgeInsets.fromLTRB(4, 2, 4, 0), child: Row(children: [

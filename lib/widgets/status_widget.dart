@@ -25,7 +25,9 @@ class _StatusWidgetState extends State<StatusWidget> {
       margin: EdgeInsets.fromLTRB(4,4,4,0),child: Column(
       children: [
         Padding(padding: EdgeInsets.all(4.0), child: Row(children: [
-          Image.asset(widget.status.userImage, height: 34, width: 34, fit: BoxFit.fill),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(30.0),
+            child: Image.asset(widget.status.userImage, height: 34, width: 34, fit: BoxFit.fill),),
           SizedBox(width: 8,),
           Expanded(child: Column(children: [
             Row(children: [Expanded(child: Text(widget.status.userName, style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold), textAlign: TextAlign.start,))],),
@@ -36,7 +38,7 @@ class _StatusWidgetState extends State<StatusWidget> {
         ],),),
         SizedBox(height: 8,),
         Padding(padding: EdgeInsets.all(8), child: Row(children: [Expanded(child: Text(widget.status.userStatus,style: TextStyle(color: Colors.black87, fontWeight: FontWeight.normal, fontSize: 16.0),))],),),
-        Visibility(visible: visibility ,child: Image.asset(widget.status.userStatusImage, height: 200, width: double.infinity, fit: BoxFit.fill,)),
+        Visibility(visible: visibility ,child: Image.asset(widget.status.userStatusImage, height: 200, width: double.infinity, fit: BoxFit.cover,)),
         SizedBox(height: 10,),
         Padding(padding: EdgeInsets.all(8), child: Row(crossAxisAlignment: CrossAxisAlignment.center,children: [
           Image.asset("assets/liked.png", height: 18, width: 18, fit: BoxFit.fill,),

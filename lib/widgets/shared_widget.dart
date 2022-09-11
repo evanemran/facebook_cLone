@@ -22,7 +22,9 @@ class _SharedWidgetState extends State<SharedWidget> {
       margin: EdgeInsets.fromLTRB(4,4,4,0),child: Column(
       children: [
         Padding(padding: EdgeInsets.all(4.0), child: Row(children: [
-          Image.asset(widget.status.sImage, height: 34, width: 34, fit: BoxFit.fill),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(30.0),
+            child: Image.asset(widget.status.sImage, height: 34, width: 34, fit: BoxFit.fill),),
           SizedBox(width: 8,),
           Expanded(child: Column(children: [
             Row(children: [Text(widget.status.sName, style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold), textAlign: TextAlign.start,), Expanded(child: Text(" shared a post", style: TextStyle(color: Colors.black54, fontSize: 14.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,))],),
@@ -47,7 +49,7 @@ class _SharedWidgetState extends State<SharedWidget> {
             ],),),
             SizedBox(height: 8,),
             Padding(padding: EdgeInsets.all(8), child: Row(children: [Expanded(child: Text(widget.status.status.userStatus,style: TextStyle(color: Colors.black87, fontWeight: FontWeight.normal, fontSize: 16.0),))],),),
-            Visibility(visible: visibility ,child: Image.asset(widget.status.status.userStatusImage, height: 200, width: double.infinity, fit: BoxFit.fill,)),
+            Visibility(visible: visibility ,child: Image.asset(widget.status.status.userStatusImage, height: 200, width: double.infinity, fit: BoxFit.cover,)),
             SizedBox(height: 8,),
           ],
         ),
