@@ -30,7 +30,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       physics: BouncingScrollPhysics(),
-      child: Column(children: [Padding(padding: EdgeInsets.all(20), child: Column(crossAxisAlignment: CrossAxisAlignment.center,children: [
+      child: Column(children: [Padding(padding: EdgeInsets.all(15), child: Column(crossAxisAlignment: CrossAxisAlignment.center,children: [
         Container(
           height: 300,
           color: Colors.white,

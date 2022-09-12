@@ -9,11 +9,11 @@ List<Notifications> list = [
   Notifications("assets/banner.jpeg", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/liked.png"),
   Notifications("assets/stark.jpg", "Tony Stark and 2 others reacted your photo.", "Few seconds ago", "assets/haha.png"),
   Notifications("assets/profile.png", "Bruce Banner and 112 others loved your post.", "Few seconds ago", "assets/love.png"),
-  Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/liked.png"),
-  Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/liked.png"),
-  Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/liked.png"),
-  Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/liked.png"),
-  Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/liked.png"),
+  Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/angry.png"),
+  Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/sad.png"),
+  Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/wow.png"),
+  Notifications("assets/profile.png", "Bruce Banner and 4 others commented your post.", "Few seconds ago", "assets/commented.png"),
+  Notifications("assets/profile.png", "It's Wanda Maximoff's birthday today. Share a post to let her know that you're thinking about her..", "Few seconds ago", "assets/birthday.png"),
   Notifications("assets/profile.png", "Bruce Banner and 112 others liked your post.", "Few seconds ago", "assets/liked.png"),
   Notifications("assets/profile.png", "Bruce Banner and 12 others liked your post.", "Few seconds ago", "assets/liked.png"),
   Notifications("assets/profile.png", "Bruce Banner and 12 others liked your post.", "Few seconds ago", "assets/liked.png"),
@@ -51,9 +51,9 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                     Row(crossAxisAlignment: CrossAxisAlignment.start,children: [
                       Container(width: 60, height: 60, color: ThemeColors.blueNotification, child: Center(child: Stack(children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset(item.nImage, height: 60, width: 60, fit: BoxFit.cover,),),
-                        Positioned(bottom: 0, right: 0 ,child: Image.asset(item.nIcon, height: 18, width: 18, fit: BoxFit.cover,),)
+                          borderRadius: BorderRadius.circular(35.0),
+                          child: Image.asset(item.nImage, height: 70, width: 70, fit: BoxFit.cover,),),
+                        Positioned(bottom: 0, right: 0 ,child: Image.asset(item.nIcon, height: 22, width: 22, fit: BoxFit.cover,),)
                       ],),),),
                       const SizedBox(width: 8,),
                       Expanded(child: Column(children: [
