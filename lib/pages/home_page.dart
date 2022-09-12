@@ -6,27 +6,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../styles/ThemeColors.dart';
+import '../widgets/notification_widget.dart';
+import '../widgets/profile_widget.dart';
+import '../widgets/requests_widget.dart';
 import '../widgets/status_widget.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin {
+
+  int _selectedTab = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -57,38 +53,58 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
 
           bottom: TabBar(
+            onTap: (index) {
+              _selectedTab = index;
+              setState(() {
+
+              });
+            },
             indicatorColor: ThemeColors.blueAccent,
             labelColor: ThemeColors.blueAccent,
             unselectedLabelColor: Colors.black87,
             tabs: [
-              Tab(child: ImageIcon(AssetImage("assets/home.png"), color: ThemeColors.blueAccent,),),
-              Tab(child: Stack(children: [
+              Tab(child: _selectedTab == 0 ? ImageIcon(AssetImage("assets/home.png"), color: ThemeColors.blueAccent,) : ImageIcon(AssetImage("assets/home_unselected.png"), color: Colors.black87,),),
+              Tab(child: _selectedTab == 1 ? Stack(children: [
+                ImageIcon(AssetImage("assets/friends.png"), color: ThemeColors.blueAccent,),
+                Transform.translate(
+                    offset: Offset(12,0),
+                    child: Positioned(right: 0, top: 0, child: makeNotification("4"))
+                ),
+              ],) : Stack(children: [
                 ImageIcon(AssetImage("assets/requests.png"), color: Colors.black87,),
                 Transform.translate(
                     offset: Offset(12,0),
                     child: Positioned(right: 0, top: 0, child: makeNotification("4"))
                 ),
               ],),),
-              Tab(child: ImageIcon(AssetImage("assets/user.png"), color: Colors.black87,),),
-              Tab(child: ImageIcon(AssetImage("assets/market.png"), color: Colors.black87,),),
-              Tab(child: Stack(children: [
+              Tab(child: _selectedTab == 2 ? ImageIcon(AssetImage("assets/user_selected.png"), color: ThemeColors.blueAccent,) : ImageIcon(AssetImage("assets/user.png"), color: Colors.black87,),),
+              Tab(child: _selectedTab == 3 ? ImageIcon(AssetImage("assets/market.png"), color: ThemeColors.blueAccent,) : ImageIcon(AssetImage("assets/market.png"), color: Colors.black87,),),
+              Tab(child: _selectedTab == 4 ? Stack(children: [
+                ImageIcon(AssetImage("assets/bell.png"), color: ThemeColors.blueAccent,),
+                Transform.translate(
+                    offset: Offset(12,0),
+                    child: Positioned(right: 0, top: 0, child: makeNotification("3"))
+                ),
+              ],) : Stack(children: [
                 ImageIcon(AssetImage("assets/notification.png"), color: Colors.black87,),
                 Transform.translate(
                     offset: Offset(12,0),
                     child: Positioned(right: 0, top: 0, child: makeNotification("3"))
                 ),
               ],),),
-              Tab(child: ImageIcon(AssetImage("assets/menu.png"), color: Colors.black87,),),
+              Tab(child: _selectedTab == 5 ? ImageIcon(AssetImage("assets/menu.png"), color: ThemeColors.blueAccent,) : ImageIcon(AssetImage("assets/menu.png"), color: Colors.black87,),),
             ],
           ),
         ),
         body: const TabBarView(
+          //to restrict unwanted swipes
+          physics: NeverScrollableScrollPhysics(),
           children: [
             HomeWidget(),
+            RequestsWidget(),
+            ProfileWidget(),
             Center(child: Text("N/A"),),
-            Center(child: Text("N/A"),),
-            Center(child: Text("N/A"),),
-            Center(child: Text("N/A"),),
+            NotificationWidget(),
             Center(child: Text("N/A"),),
           ],
         ),

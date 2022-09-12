@@ -32,7 +32,11 @@ class _SuggestionWidgetState extends State<SuggestionWidget> {
           Row(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: [Padding(padding: EdgeInsets.fromLTRB(8, 8, 8, 8), child: Text(widget.story.sName, style: TextStyle(color: Colors.black87, fontSize: 14, fontWeight: FontWeight.bold),),)],),
           Row(children: [Expanded(child: Padding(padding: EdgeInsets.fromLTRB(8, 0, 0, 8), child: Text(widget.story.sMutual, style: const TextStyle(color: Colors.black87, fontSize: 12), textAlign: TextAlign.start,),))],),
           Padding(padding: EdgeInsets.fromLTRB(4, 2, 4, 0), child: Row(children: [
-            Expanded(child: TextButton(onPressed: () {}, child: Text("Add Friend", style: TextStyle(color: Colors.white, fontSize: 14),), style: ButtonStyle(
+            Expanded(child: TextButton(onPressed: () {}, child: Center(child: Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center ,children: [
+              Image.asset("assets/add_friend.png", width: 14, height: 14, color: Colors.white,),
+              SizedBox(width: 8,),
+              Text("Add Friend", style: TextStyle(color: Colors.white, fontSize: 14),)
+            ],),), style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(const Color(0xff1773EA)),
             ),)),
             SizedBox(width: 8,),
