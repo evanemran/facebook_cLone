@@ -1,6 +1,7 @@
 import 'package:facebook_clone/models/button.dart';
 import 'package:facebook_clone/models/status_model.dart';
 import 'package:facebook_clone/widgets/icon_button_widget.dart';
+import 'package:facebook_clone/widgets/reaction_box.dart';
 import 'package:flutter/material.dart';
 
 class StatusWidget extends StatefulWidget {
@@ -61,7 +62,8 @@ class _StatusWidgetState extends State<StatusWidget> {
         SizedBox(height: 10,),
         Container(width: double.infinity, color: Colors.black26, height: 1,),
         Row(children: [
-          Expanded(child: IconButtonWidget(button: Button("assets/like.png", "Like"))),
+          ReactionButton(),
+          // Expanded(child: IconButtonWidget(button: Button("assets/like.png", "Like"))),
           Expanded(child: IconButtonWidget(button: Button("assets/comment.png", "Comment"))),
           Expanded(child: IconButtonWidget(button: Button("assets/share.png", "Share"))),
         ],),
