@@ -157,7 +157,19 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   color: Colors.white,
                   child: Column(
                     children: [
-                      Image.asset(list[index].sImage, height: 100, width: 110, fit: BoxFit.cover,),
+                      Container(
+                        width: 110,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: const BorderRadius.all(
+                              Radius.circular(10.0) //                 <--- border radius here
+                          ),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Image.asset(list[index].sImage, height: 100, width: 110, fit: BoxFit.cover,),),
+                      ),
                       SizedBox(height: 8.0),
                       Row(children: [Expanded(child: Text(list[index].sName,
                         style: const TextStyle(fontSize: 14.0,color: Colors.black, fontWeight: FontWeight.bold),))],),

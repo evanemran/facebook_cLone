@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../styles/ThemeColors.dart';
+import '../widgets/marketplace_widget.dart';
+import '../widgets/menu_widget.dart';
 import '../widgets/notification_widget.dart';
 import '../widgets/profile_widget.dart';
 import '../widgets/requests_widget.dart';
@@ -103,9 +105,9 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
             HomeWidget(),
             RequestsWidget(),
             ProfileWidget(),
-            Center(child: Text("N/A"),),
+            MarketPlaceWidget(),
             NotificationWidget(),
-            Center(child: Text("N/A"),),
+            MenuWidget(),
           ],
         ),
       ),// This trailing comma makes auto-formatting nicer for build methods.
