@@ -34,7 +34,35 @@ class _MenuWidgetState extends State<MenuWidget> {
               Row(children: [Expanded(child: Text("See your profile", style: TextStyle(color: Colors.black54, fontWeight: FontWeight.normal, fontSize: 14
               ),))],),
             ],))
-          ],)
+          ],),
+
+          SizedBox(height: 10,),
+
+          Padding(child: Row(children: [Expanded(child: Text("All Shortcuts", style: TextStyle(color: Colors.black, fontSize: 18), textAlign: TextAlign.start,))],), padding: EdgeInsets.all(8),),
+
+          GridView.count(
+            crossAxisCount: 2,
+            childAspectRatio: 2,
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 10.0,
+            shrinkWrap: true,
+            children: List.generate(20, (index) {
+              return Card(
+                elevation: 4,
+                child: Container(
+                  decoration: const BoxDecoration(
+                    borderRadius:
+                    BorderRadius.all(Radius.circular(8.0),),
+                  ),
+                  child: Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                    Expanded(child: Image.asset("assets/stark.jpg", width: 30, height: 30,)),
+                      Expanded(child: Center(child: Row(children: [Expanded(child: Text("Feeds", style: TextStyle(color: Colors.black, fontSize: 16), textAlign: TextAlign.start,),)],),))
+                  ],),
+                ),
+              );
+            },),
+          )
 
 
         ],),

@@ -67,13 +67,13 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
             tabs: [
               Tab(child: _selectedTab == 0 ? ImageIcon(AssetImage("assets/home.png"), color: ThemeColors.blueAccent,) : ImageIcon(AssetImage("assets/home_unselected.png"), color: Colors.black87,),),
               Tab(child: _selectedTab == 1 ? Stack(children: [
-                ImageIcon(AssetImage("assets/friends.png"), color: ThemeColors.blueAccent,),
+                const ImageIcon(AssetImage("assets/friends.png"), color: ThemeColors.blueAccent,),
                 Transform.translate(
                     offset: Offset(12,0),
                     child: Positioned(right: 0, top: 0, child: makeNotification("4"))
                 ),
               ],) : Stack(children: [
-                ImageIcon(AssetImage("assets/requests.png"), color: Colors.black87,),
+                const ImageIcon(AssetImage("assets/requests.png"), color: Colors.black87,),
                 Transform.translate(
                     offset: Offset(12,0),
                     child: Positioned(right: 0, top: 0, child: makeNotification("4"))
@@ -82,13 +82,13 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
               Tab(child: _selectedTab == 2 ? ImageIcon(AssetImage("assets/user_selected.png"), color: ThemeColors.blueAccent,) : ImageIcon(AssetImage("assets/user.png"), color: Colors.black87,),),
               Tab(child: _selectedTab == 3 ? ImageIcon(AssetImage("assets/market.png"), color: ThemeColors.blueAccent,) : ImageIcon(AssetImage("assets/market.png"), color: Colors.black87,),),
               Tab(child: _selectedTab == 4 ? Stack(children: [
-                ImageIcon(AssetImage("assets/bell.png"), color: ThemeColors.blueAccent,),
+                const ImageIcon(AssetImage("assets/bell.png"), color: ThemeColors.blueAccent,),
                 Transform.translate(
-                    offset: Offset(12,0),
+                    offset: const Offset(12,0),
                     child: Positioned(right: 0, top: 0, child: makeNotification("3"))
                 ),
               ],) : Stack(children: [
-                ImageIcon(AssetImage("assets/notification.png"), color: Colors.black87,),
+                const ImageIcon(AssetImage("assets/notification.png"), color: Colors.black87,),
                 Transform.translate(
                     offset: Offset(12,0),
                     child: Positioned(right: 0, top: 0, child: makeNotification("3"))

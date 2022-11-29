@@ -349,7 +349,7 @@ class _ReactionButtonState extends State<ReactionButton> with TickerProviderStat
           // Just a top space
           Container(
             width: double.infinity,
-            height: 100.0,
+            height: 50.0,
           ),
 
           // main content
