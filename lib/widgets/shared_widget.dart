@@ -18,34 +18,34 @@ class _SharedWidgetState extends State<SharedWidget> {
   @override
   Widget build(BuildContext context) {
     visibility = widget.status.status.userStatusImage.isEmpty ? false : true;
-    return Card(margin: EdgeInsets.fromLTRB(4,4,4,0), shadowColor: Colors.white, elevation: 4.0, color: Colors.white, child: Container(
-      margin: EdgeInsets.fromLTRB(4,4,4,0),child: Column(
+    return Card(margin: const EdgeInsets.fromLTRB(4,4,4,0), shadowColor: Colors.white, elevation: 4.0, color: Colors.white, child: Container(
+      margin: const EdgeInsets.fromLTRB(4,4,4,0),child: Column(
       children: [
-        Padding(padding: EdgeInsets.all(4.0), child: Row(children: [
+        Padding(padding: const EdgeInsets.all(4.0), child: Row(children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(30.0),
             child: Image.asset(widget.status.sImage, height: 34, width: 34, fit: BoxFit.fill),),
-          SizedBox(width: 8,),
+          const SizedBox(width: 8,),
           Expanded(child: Column(children: [
-            Row(children: [Text(widget.status.sName, style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold), textAlign: TextAlign.start,), Expanded(child: Text(" shared a post", style: TextStyle(color: Colors.black54, fontSize: 14.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,))],),
-            Row(children: [Expanded(child: Text(widget.status.sTime, style: TextStyle(color: Colors.black45, fontSize: 12.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,))],),
+            Row(children: [Text(widget.status.sName, style: const TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold), textAlign: TextAlign.start,), Expanded(child: Text(" shared a post", style: TextStyle(color: Colors.black54, fontSize: 14.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,))],),
+            Row(children: [Expanded(child: Text(widget.status.sTime, style: const TextStyle(color: Colors.black45, fontSize: 12.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,))],),
           ],)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz, color: Colors.black45,),)
+          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz, color: Colors.black45,),)
         ],),),
-        SizedBox(height: 8,),
+        const SizedBox(height: 8,),
 
 
-        Card(margin: EdgeInsets.fromLTRB(4,4,4,0), shadowColor: Colors.white, elevation: 4.0, color: Colors.white, child: Container(
-          margin: EdgeInsets.fromLTRB(4,4,4,0),child: Column(
+        Card(margin: const EdgeInsets.fromLTRB(4,4,4,0), shadowColor: Colors.white, elevation: 4.0, color: Colors.white, child: Container(
+          margin: const EdgeInsets.fromLTRB(4,4,4,0),child: Column(
           children: [
-            Padding(padding: EdgeInsets.all(4.0), child: Row(children: [
+            Padding(padding: const EdgeInsets.all(4.0), child: Row(children: [
               Image.asset(widget.status.status.userImage, height: 34, width: 34, fit: BoxFit.fill),
-              SizedBox(width: 8,),
+              const SizedBox(width: 8,),
               Expanded(child: Column(children: [
-                Row(children: [Expanded(child: Text(widget.status.status.userName, style: TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold), textAlign: TextAlign.start,))],),
-                Row(children: [Expanded(child: Text(widget.status.status.postTime, style: TextStyle(color: Colors.black45, fontSize: 12.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,))],),
+                Row(children: [Expanded(child: Text(widget.status.status.userName, style: const TextStyle(color: Colors.black, fontSize: 16.0, fontWeight: FontWeight.bold), textAlign: TextAlign.start,))],),
+                Row(children: [Expanded(child: Text(widget.status.status.postTime, style: const TextStyle(color: Colors.black45, fontSize: 12.0, fontWeight: FontWeight.normal), textAlign: TextAlign.start,))],),
               ],)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz, color: Colors.black45,),)
+              IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz, color: Colors.black45,),)
             ],),),
             SizedBox(height: 8,),
             Padding(padding: EdgeInsets.all(8), child: Row(children: [Expanded(child: Text(widget.status.status.userStatus,style: TextStyle(color: Colors.black87, fontWeight: FontWeight.normal, fontSize: 16.0),))],),),

@@ -18,7 +18,7 @@ class _MarketPlaceWidgetState extends State<MarketPlaceWidget> {
           children: [
             Row(
               children: [
-                Expanded(
+                const Expanded(
                     child: Text(
                   "Marketplace",
                   style: TextStyle(
@@ -38,7 +38,7 @@ class _MarketPlaceWidgetState extends State<MarketPlaceWidget> {
                     onPressed: () {},
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 CircleAvatar(
@@ -55,7 +55,7 @@ class _MarketPlaceWidgetState extends State<MarketPlaceWidget> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -72,7 +72,7 @@ class _MarketPlaceWidgetState extends State<MarketPlaceWidget> {
                       mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
                       children: const [Icon(Icons.edit_calendar_sharp, color: Colors.black,), SizedBox(width: 8,) ,Text("Sell", style: TextStyle(color: Colors.black, fontSize: 16),)],),),
                 )),
-                SizedBox(width: 8,),
+                const SizedBox(width: 8,),
                 Expanded(
                     child: TextButton(
                       style: ButtonStyle(
@@ -92,6 +92,8 @@ class _MarketPlaceWidgetState extends State<MarketPlaceWidget> {
               crossAxisCount: 2,
               crossAxisSpacing: 10.0,
               mainAxisSpacing: 10.0,
+              childAspectRatio: 1,
+              physics: const BouncingScrollPhysics(),
               shrinkWrap: true,
               children: List.generate(20, (index) {
                 return Padding(
@@ -104,6 +106,17 @@ class _MarketPlaceWidgetState extends State<MarketPlaceWidget> {
                       ),
                       borderRadius:
                       BorderRadius.all(Radius.circular(4.0),),
+                    ),
+                    child: Container(
+                      color: Colors.transparent,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            bottom: 0,
+                            child: Container(color: Colors.white, padding: const EdgeInsets.fromLTRB(2,4,8,0), child: Text("180\$ . Oneplus 8T 128 GB. Used for almost 8 months.", maxLines: 1, style: TextStyle(color: Colors.black, backgroundColor: Colors.white, fontSize: 16,),)),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 );

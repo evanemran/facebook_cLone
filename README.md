@@ -1,6 +1,9 @@
-# facebook_clone
+# Facebook App UI Clone
 
-A new flutter project with Facebook UI
+This is the clone of the popular social media app "facebook".
+This project is for educational purpose only, Any commercial use is strictly restricted.
+
+<img src = "assets/fb_clone.png">
 
 ## Getting Started
 

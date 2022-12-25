@@ -7,18 +7,17 @@ import '../models/notification_model.dart';
 import '../styles/ThemeTexts.dart';
 
 List<UserSuggestion> list = [
-  UserSuggestion("Ryan Reynolds", "assets/profile.png", "3 mutual friends"),
-  UserSuggestion("Ryan Reynolds", "assets/profile.png", "3 mutual friends"),
-  UserSuggestion("Professor Xavier", "assets/profile.png", "12 mutual friends"),
-  UserSuggestion("Pepper Potts", "assets/profile.png", "112 mutual friends"),
-  UserSuggestion("Wanda Maximoff", "assets/profile.png", "4 mutual friends"),
+  UserSuggestion("Ryan Reynolds", "assets/reynolds.png", "3 mutual friends"),
+  UserSuggestion("Ryan Reynolds", "assets/reynolds.png", "3 mutual friends"),
+  UserSuggestion("Professor Xavier", "assets/xavier.png", "12 mutual friends"),
+  UserSuggestion("Pepper Potts", "assets/pepper.jpg", "112 mutual friends"),
+  UserSuggestion("Wanda Maximoff", "assets/wanda.jpg", "4 mutual friends"),
 
-  UserSuggestion("Wanda Maximoff", "assets/profile.png", "4 mutual friends"),
-  UserSuggestion("Wanda Maximoff", "assets/profile.png", "4 mutual friends"),
-  UserSuggestion("Wanda Maximoff", "assets/profile.png", "4 mutual friends"),
-  UserSuggestion("Wanda Maximoff", "assets/profile.png", "4 mutual friends"),
-  UserSuggestion("Wanda Maximoff", "assets/profile.png", "4 mutual friends"),
-  UserSuggestion("Wanda Maximoff", "assets/profile.png", "4 mutual friends"),
+  UserSuggestion("Florance Pugh", "assets/florance.png", "4 mutual friends"),
+  UserSuggestion("Florance Pugh", "assets/florance.png", "4 mutual friends"),
+  UserSuggestion("Florance Pugh", "assets/florance.png", "4 mutual friends"),
+  UserSuggestion("Florance Pugh", "assets/florance.png", "4 mutual friends"),
+  UserSuggestion("Florance Pugh", "assets/florance.png", "4 mutual friends"),
 ];
 
 class RequestsWidget extends StatefulWidget {
@@ -73,7 +72,7 @@ class _RequestsWidgetState extends State<RequestsWidget> {
                     children: [
                       Row(crossAxisAlignment: CrossAxisAlignment.start,children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
+                          borderRadius: BorderRadius.circular(80.0),
                           child: Image.asset(item.sImage, height: 80, width: 80, fit: BoxFit.cover,),),
                         const SizedBox(width: 8,),
                         Expanded(child: Column(children: [
@@ -113,7 +112,7 @@ class _RequestsWidgetState extends State<RequestsWidget> {
                   children: [
                     Row(crossAxisAlignment: CrossAxisAlignment.start,children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(30.0),
+                        borderRadius: BorderRadius.circular(80.0),
                         child: Image.asset(item.sImage, height: 80, width: 80, fit: BoxFit.cover,),),
                       const SizedBox(width: 8,),
                       Expanded(child: Column(children: [
